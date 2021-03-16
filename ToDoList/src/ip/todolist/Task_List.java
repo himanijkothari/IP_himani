@@ -4,6 +4,7 @@
 
 package ip.todolist;
 
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -40,6 +41,24 @@ public class Task_List {
         }
 
     }
+
+    public void listAllTaskFromList(int sortBy)
+    {
+        if(taskList.size()==0)
+            System.out.println("No task in list");
+        else
+        if(sortBy==1)//by date
+        {
+            taskList.sort(new SortbyDate());
+            displayAllTask();
+        }
+        else
+        {
+            taskList.sort(new SortbyProjectName());
+            displayAllTask();
+        }
+    }
+
 
     public void displayTaskFromList(int ID)
     {
@@ -107,5 +126,48 @@ public class Task_List {
         System.out.println("==================");
     }
 
+    public boolean saveToFile(String fileName){
+        try{
+            FileOutputStream fileOutputStream=new FileOutputStream(fileName);
+            ObjectOutputStream objectOutputStream=new ObjectOutputStream(fileOutputStream);
+
+            objectOutputStream.writeObject(taskList);
+
+            objectOutputStream.close();
+            fileOutputStream.close();
+            return true;
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return  false;
+        }
+    }
+
+    public boolean readFromFile(String fileName){
+        boolean status=false;
+
+        try{
+            if(!Files.isReadable(Paths.get(fileName))){
+                System.out.println("The data file,i.e.,"+fileName+"does not exists");
+                return false;
+            }
+
+            FileInputStream fileInputStream=new FileInputStream(fileName);
+            ObjectInputStream objectInputStream=new ObjectInputStream(fileInputStream);
+
+            taskList=(ArrayList<Task>)objectInputStream.readObject();
+
+            objectInputStream.close();
+            fileInputStream.close();
+            return true;
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+
 
 }
+
