@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="15">
+      <module name="github.IP_himani.Test.main" target="15" />
+      <module name="github.IP_himani.Test.test" target="15" />
       <module name="IP_himani.Test.main" target="15" />
       <module name="IP_himani.Test.test" target="15" />
+      <module name="IP_himani.ToDoList.untitled.main" target="15" />
+      <module name="IP_himani.ToDoList.untitled.test" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
