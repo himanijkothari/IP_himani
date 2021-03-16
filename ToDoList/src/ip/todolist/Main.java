@@ -1,10 +1,14 @@
 
 package ip.todolist;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+
 public class Main {
+
+    public static String fileName = "Tasklist.obj";
 
     public static void main(String[] args)  {
 
@@ -16,11 +20,13 @@ public class Main {
             System.out.println("(3)Edit Task(update, mark as done, remove)");
             System.out.println("(4)Save and quit");
             Task_List todolist = new Task_List();
-            System.out.println("Enter your choice:");
-            Scanner sc = new Scanner(System.in); // Taking input from user
-            int choice = sc.nextInt();
-            do {
 
+            int choice = -1;
+            while (choice != 4)
+            {
+                System.out.println("Enter your choice:");
+                Scanner sc = new Scanner(System.in); // Taking input from user
+                choice = sc.nextInt();
                 switch (choice) {
                     case 1:
 
@@ -31,11 +37,9 @@ public class Main {
                             String title = sc.next();
                             System.out.println("Enter the project associated with task:");
                             String projectName = sc.next();
-                            System.out.println("Enter the due date of task(MM/DD/YYYY):");
-                            SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+                            System.out.println("Enter the due date of task(for example:2019-12-02):");
                             String date = sc.next();
-                            df.setLenient(false);
-                            Date dueDate = df.parse(date);
+                            LocalDate dueDate = LocalDate.parse(date,DateTimeFormatter.ISO_LOCAL_DATE);
                             Task new_task = new Task(title, dueDate, projectName);
                             todolist.addTaskList(new_task);
                             System.out.println("Task added Successfully");
@@ -46,17 +50,38 @@ public class Main {
                         }
                         break;
                     case 3:
-
-
-
-
-
+                        todolist.displayAllTask();
+                        System.out.println("Enter the task ID which you want to edit:");
+                        int ID = sc.nextInt();
+                        todolist.displayTaskFromList(ID);
+                        System.out.println("Task Edit options:");
+                        System.out.println("=================");
+                        System.out.println();
+                        System.out.println("Choose Options:");
+                        System.out.println("==============");
+                        System.out.println("(1)Update the selected task:");
+                        System.out.println("(2)Mark selected task as done:");
+                        System.out.println("(3)Delete selected task:");
+                        System.out.println();
+                        System.out.println("Enter you choice:");
+                        int choice1 = sc.nextInt();
+                        switch (choice1){
+                            case 1:
+                                todolist.updateTaskFromList(ID);
+                                break;
+                            case 2:
+                                todolist.markTaskAsDone(ID);
+                                break;
+                            case 3:
+                                todolist.deleteTaskFromList(ID);
+                                break;
+                            default:
+                                System.out.println("Returning to Main menu");
+                        }
+                    case 4:
                         break;
-
-
                 }
             }
-            while (choice == 4);
 
         }
     }

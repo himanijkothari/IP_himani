@@ -3,15 +3,25 @@
  */
 
 package ip.todolist;
-import  java.util.*;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import  java.util.ArrayList;
+
 public class Task_List {
 
     private ArrayList<Task> taskList;
 
-    public Task_List(){
-
+    public Task_List()
+    {
         taskList = new ArrayList<Task>();
-
     }
 
     public void addTaskList(Task task)
@@ -19,8 +29,83 @@ public class Task_List {
         taskList.add(task);
     }
 
+    public void displayAllTask()
+    {
+        String displayFormat="%-4s%-35s%-20s%-20s%-10s";
+        System.out.println(String.format(displayFormat,"ID","TITLE","PROJECT-NAME","DUEDATE","STATUS"));
+        System.out.println(String.format(displayFormat,"==","=====","============","========","======"));
+        for(Task task:taskList){
+
+            System.out.println(String.format(displayFormat,task.getTaskID(),task.getTitle(),task.getProjectName(),task.getDueDate(),(task.getStatus()?"COMPLETED":"NOT COMPLETED")));
+        }
+
+    }
+
+    public void displayTaskFromList(int ID)
+    {
+        System.out.println("Task to be updated:");
+        System.out.println("===================");
+        Task task=getTaskByID(ID);
+        System.out.println("Task title:  "+task.getTitle());
+        System.out.println("Task dueDate:"+task.getDueDate());
+        System.out.println("Task project:"+task.getProjectName());
+        System.out.println("Task status: "+(task.getStatus()?"COMPLETED":"NOT COMPLETED"));
+        System.out.println("=========================");
+    }
+
+    public Task getTaskByID(int ID)
+    {
+        for(Task task:taskList){
+            int task_id=task.getTaskID();
+            if(task_id== ID)
+                return task;
+        }
+        return null;
+    }
+
+    public void updateTaskFromList(int ID)
+    {
+        Scanner sc=new Scanner(System.in);
+
+        Task task=getTaskByID(ID);
+        System.out.println("Press enter the following details to update thetask:");
+        System.out.println("=====================================================");
+        System.out.print("Task Title:");
+        String title=sc.next();
+        if(!(title.trim().equals("")||title==null))
+            task.setTitle(title);
+
+        System.out.print("Project name:");
+        String projectName=sc.next();
+        if(!(projectName.trim().equals("")||projectName==null))
+            task.setProjectName(projectName);
+
+        System.out.print("DueDate:");
+        String date=sc.next();
+        LocalDate  dueDate=LocalDate.parse(date,DateTimeFormatter.ISO_LOCAL_DATE);
+        if(!(dueDate.equals("")||dueDate==null))
+            task.setDueDate(dueDate);
+
+        System.out.println("Task updated successfully.");
+        System.out.println("=========================");
+    }
+
+    public void deleteTaskFromList(int ID){
+
+        Task task=getTaskByID(ID);
+        taskList.remove(task);
+        System.out.println("Tasksuccessfullydeleted.");
+        System.out.println("=========================");
+    }
 
 
+    public void markTaskAsDone(int ID)
+    {
+        Task task=getTaskByID(ID);
+        task.markAsDone();
+        System.out.println("Task mark as done.");
+        System.out.println("==================");
+    }
 
 
 }
