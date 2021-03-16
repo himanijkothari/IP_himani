@@ -4,6 +4,7 @@
 
 package ip.todolist;
 
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -40,6 +41,24 @@ public class Task_List {
         }
 
     }
+
+    public void listAllTaskFromList(int sortBy)
+    {
+        if(taskList.size()==0)
+            System.out.println("No task in list");
+        else
+        if(sortBy==1)//by date
+        {
+            taskList.sort(new SortbyDate());
+            displayAllTask();
+        }
+        else
+        {
+            taskList.sort(new SortbyProjectName());
+            displayAllTask();
+        }
+    }
+
 
     public void displayTaskFromList(int ID)
     {
@@ -108,4 +127,6 @@ public class Task_List {
     }
 
 
+
 }
+

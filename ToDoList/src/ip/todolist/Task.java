@@ -18,15 +18,14 @@ public class Task implements Serializable{
         private String projectName;  // Represents project name associate with task.
         private LocalDate dueDate;    // Represents task due date.
 
-        public Task(String title, LocalDate dueDate, String projectName)
-        {
+        public Task(String title, LocalDate dueDate, String projectName) {
             setTaskID();
             setTitle(title);
             setProjectName(projectName);
             setDueDate(dueDate);
             this.status = false;    // Setting by default status of task as false. False indicates pending task.
-        }
 
+        }
         public void setTaskID()
         {
             this.taskID = ++count;
@@ -100,20 +99,23 @@ public class Task implements Serializable{
 }
 
 
-        class SortbyDate implements Comparator<Task>
-        {
-            @Override
-            public int compare(Task t1,Task t2)
-            {
-                return t1.getDueDate().compareTo(t2.getDueDate());
-            }
-        }
+class SortbyDate implements Comparator<Task>
+{
+    @Override
+    public int compare(Task t1,Task t2)
+    {
+        return t1.getDueDate().compareTo(t2.getDueDate());
+    }
+}
 
-        class SortbyProjectName implements Comparator<Task>
-        {
-            @Override
-            public int compare(Task t1,Task t2)
-            {
-                return t1.getProjectName().compareToIgnoreCase(t2.getProjectName());
-            }
-        }
+class SortbyProjectName implements Comparator<Task>
+{
+    @Override
+    public int compare(Task t1,Task t2)
+    {
+        return t1.getProjectName().compareToIgnoreCase(t2.getProjectName());
+    }
+
+}
+
+
