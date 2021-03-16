@@ -9,13 +9,7 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-sourceSets {
-    test{
-        java {
-            srcDirs = ['Test']
-        }
-    }
-}
+
 dependencies {
     compile 'junit:junit:4.12'
     testImplementation(platform('org.junit:junit-bom:5.7.0'))
@@ -26,5 +20,21 @@ test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
+    }
+}
+sourceSets {
+    test {
+        java {
+            srcDirs = ['ToDoList/src/test']
+        }
+    }
+}
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['ToDoList/src/main/ip/todolist']
+        }
     }
 }

@@ -7,8 +7,10 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static String fileName = "TaskList.obj";
 
     public static void main(String[] args) {
+
 
         System.out.println("Welcome to ToDoLy");
         System.out.println("You have X tasks todo and Y tasks are done");
@@ -18,7 +20,7 @@ public class Main {
         System.out.println("(3)Edit Task(update, mark as done, remove)");
         System.out.println("(4)Save and quit");
         Task_List todolist = new Task_List();
-
+        todolist.readFromFile(fileName);
         int choice = -1;
         while (choice != 4) {
             System.out.println("Enter your choice:");
@@ -90,6 +92,6 @@ public class Main {
                     break;
             }
         }
-
+        todolist.saveToFile(fileName);
     }
 }
