@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'idea'
 }
 
 group 'org.example'
@@ -9,12 +10,21 @@ repositories {
     mavenCentral()
 }
 sourceSets {
-    main {
+    test{
         java {
-            srcDirs = ['src']
+            srcDirs = ['Test']
         }
     }
 }
 dependencies {
     compile 'junit:junit:4.12'
+    testImplementation(platform('org.junit:junit-bom:5.7.0'))
+    testImplementation('org.junit.jupiter:junit-jupiter')
+    testImplementation('org.hamcrest:hamcrest:2.2')
+}
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
