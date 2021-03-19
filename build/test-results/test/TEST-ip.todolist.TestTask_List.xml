@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ip.todolist.TestTask_List" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-03-19T15:07:39" hostname="SDA-Lund-42-mbpro" time="0.04">
+  <properties/>
+  <testcase name="completedTaskCountTest()" classname="ip.todolist.TestTask_List" time="0.017"/>
+  <testcase name="testIfTaskHasAddedInTaskList()" classname="ip.todolist.TestTask_List" time="0.001"/>
+  <testcase name="testIfTaskListIsEmpty()" classname="ip.todolist.TestTask_List" time="0.001"/>
+  <testcase name="successfulSortingByProjectName()" classname="ip.todolist.TestTask_List" time="0.007"/>
+  <testcase name="successfulSortingByDate()" classname="ip.todolist.TestTask_List" time="0.003"/>
+  <testcase name="inCompletedTaskCountTest()" classname="ip.todolist.TestTask_List" time="0.001"/>
+  <testcase name="successfulDeletionOfTask()" classname="ip.todolist.TestTask_List" time="0.001"/>
+  <system-out><![CDATA[ID  TITLE                              PROJECT-NAME        DUEDATE             STATUS    
+==  =====                              ============        ========            ======    
+1   shop                               fun                 2021-10-30          NOT COMPLETED
+2   code                               practice            2021-05-15          NOT COMPLETED
+3   read                               sda                 2021-12-15          NOT COMPLETED
+ID  TITLE                              PROJECT-NAME        DUEDATE             STATUS    
+==  =====                              ============        ========            ======    
+1   code                               practice            2021-05-15          NOT COMPLETED
+2   shop                               fun                 2021-10-30          NOT COMPLETED
+3   read                               sda                 2021-12-15          NOT COMPLETED
+Task successfully deleted.
+=========================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

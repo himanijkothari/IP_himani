@@ -1,2 +1,4 @@
-java/TestTask.java
- java.TestTask
+ip/todolist/TestTask.java
+ ip.todolist.TestTask
+ip/todolist/TestTask_List.java
+ ip.todolist.TestTask_List

@@ -43,7 +43,7 @@ public class Task implements Serializable {
          * @throws NullPointerException if title is null or empty string
          */
         public void setTitle(String title) throws NullPointerException {
-            if(title == null)
+            if(title == null||title.trim().equals(""))
                 throw new NullPointerException("Title can not be empty");
             this.title = title.trim();
         }
@@ -63,7 +63,7 @@ public class Task implements Serializable {
          * @throws NullPointerException if title is null or empty string
          */
         public void setProjectName(String projectName) throws NullPointerException {
-            if(projectName == null)
+            if(projectName == null|| projectName.trim().equals(""))
                 throw new NullPointerException("Project can not be empty");
             this.projectName = projectName;
         }
