@@ -32,6 +32,9 @@ This program is menu-driven. User will be presented with available options corre
 
 ## Class Diagram
 
+![Main menu](UserManual/Class_Diagram.png)
+
+
 
 
 
@@ -56,29 +59,53 @@ When user will run the program, main menu of the program (as shown below) will b
 
 * If User press 1, the list of all tasks will be sorted by date and displayed on the interface.
 
+
+ ![Main menu](UserManual/2.png)
+ 
+
 * If User press 2, the list of all tasks will be sorted by project name and displaye on the interface.
 
+
+ ![Main menu](UserManual/3.png)
+ 
 
 #### Add new task
 
 * If user types 2, the application will prompt the User to enter the required fields of a task to add in the task list.
 
+ ![Main menu](UserManual/4.png)
 
 
 #### Edit an existing task (Update, Mark as Done, Remove)
 
+
 * If user types 3, the application will display the list of all previously saved tasks with ID and user has to select a task to perform any update, to mark as done or to remove.
+
+ ![Main menu](UserManual/5.png)
+ 
 
 * After User enter ID and select 1, the application will prompt the User to enter the required fields of a task to update it.
 
+ ![Main menu](UserManual/6.png)
+ 
+
+
 * After User enter ID and select 2, the selected task will be marked as complete.
 
+![Main menu](UserManual/7.png)
+
+
 * After User enter ID and select 3, the selected task will be deleted from list.
+
+
+![Main menu](UserManual/9.png)
 
 
 #### Closing the application
 
 * If User types 4, the application will save data of all tasks from memory,write to the data file on disk (defaut filename is tasks.obj) and quits the application.
+
+![Main menu](UserManual/8.png)
 
 
 
