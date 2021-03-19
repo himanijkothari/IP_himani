@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="252.0" y="0.0">ip.todolist.Task</node>
+    <node x="0.0" y="99.5">ip.todolist.Main</node>
+    <node x="127.25" y="370.0">ip.todolist.Task_List</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ip.todolist.Task_List" target="ip.todolist.Task">
+      <point x="19.25" y="-182.0" />
+      <point x="262.0" y="350.0" />
+      <point x="292.1666666666667" y="350.0" />
+      <point x="-80.33333333333333" y="160.0" />
+    </edge>
+    <edge source="ip.todolist.Task_List" target="ip.todolist.Main">
+      <point x="-96.25" y="-182.0" />
+      <point x="146.5" y="350.0" />
+      <point x="38.666666666666686" y="350.0" />
+      <point x="-77.33333333333333" y="60.5" />
+    </edge>
+    <edge source="ip.todolist.Main" target="ip.todolist.Task_List">
+      <point x="-1.4210854715202004E-14" y="60.5" />
+      <point x="115.99999999999999" y="340.0" />
+      <point x="185.0" y="340.0" />
+      <point x="-57.75" y="-182.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8203675944537185" x="193.36459350585938" y="447.5186462402344" />
+  <SelectedNodes>
+    <node>ip.todolist.Task_List</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
