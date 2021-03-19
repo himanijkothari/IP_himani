@@ -38,7 +38,7 @@ public class Main {
                     System.out.println("You can only add task as TaskList is empty now.");
                     todolist.readTaskFromUser();
                 }
-                System.out.println("You have " + todolist.incompleteTaskCount() + " tasks todo and " + todolist.completedTaskCount() + " tasks are done");
+                System.out.println("You have " + todolist.inCompleteTaskCount() + " tasks todo and " + todolist.completedTaskCount() + " tasks are done");
                 System.out.println("Pick an option:");
                 System.out.println("(1)Show Task List(by Date or Project)");
                 System.out.println("(2)Add New Task");

@@ -21,7 +21,7 @@ import  java.util.ArrayList;
 public class Task_List {
     
     // An array list of task objects
-    private ArrayList<Task> taskList;
+     ArrayList<Task> taskList;
 
     //Creating todolist object
     public Task_List()
@@ -142,7 +142,7 @@ public class Task_List {
      * A method to count the number of tasks with incomplete status
      * @return number of tasks with not complete status
      */
-    public int incompleteTaskCount()
+    public int inCompleteTaskCount()
     {
         return (int) taskList.stream()
                 .filter(task -> task.getStatus() == false)
