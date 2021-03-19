@@ -51,7 +51,7 @@ When user will run the program, main menu of the program (as shown below) will b
 
 * If User types 1, the application will display the options for user to get list of all previously added tasks sorted by date or by project.
 
- ![Main menu](/Users/himaniparonigar/Desktop/github/IP_himani/UserManual/1.png)
+ ![Main menu](UserManual/1.png)
  
 
 * If User press 1, the list of all tasks will be sorted by date and displayed on the interface.
